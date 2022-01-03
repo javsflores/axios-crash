@@ -1,8 +1,28 @@
 // GET REQUEST
 function getTodos() {
   // console.log("GET Request");
-  axios({ method: "get", url: "https://jsonplaceholder.typicode.com/todos" })
-    .then((res) => console.log("got data:", res))
+
+  // METHOD 1
+  // axios({
+  //   method: "get",
+  //   url: "https://jsonplaceholder.typicode.com/todos",
+  //   params: { _limit: 5 },
+  // })
+  //   .then((res) => showOutput(res))
+  //   .catch((err) => console.log("could not grab data:", err));
+
+  // METHOD 2
+  // axios
+  //   .get("https://jsonplaceholder.typicode.com/todos", {
+  //     params: { _limit: 8 },
+  //   })
+  //   .then((res) => showOutput(res))
+  //   .catch((err) => console.log("could not grab data:", err));
+
+  // METHOD 3
+  axios
+    .get("https://jsonplaceholder.typicode.com/todos?_limit=11")
+    .then((res) => showOutput(res))
     .catch((err) => console.log("could not grab data:", err));
 }
 
